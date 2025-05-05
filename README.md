@@ -42,6 +42,45 @@ This project demonstrates a contact management system using a BST where:
   - Deleting contacts
   - Listing all contacts in alphabetical order
 
+## Lowest Common Ancestor (LCA) Finder
+
+The project now includes a binary tree implementation with functionality to find the Lowest Common Ancestor (LCA) of two nodes.
+
+### What is a Lowest Common Ancestor?
+
+The Lowest Common Ancestor of two nodes in a tree is the deepest node that has both nodes as descendants. A node can be a descendant of itself.
+
+### How LCA Finding Works
+
+The algorithm uses a recursive approach:
+1. If the current node is null, return null
+2. If the current node matches either of the target nodes, return the current node
+3. Recursively search for the nodes in left and right subtrees
+4. If both left and right subtree searches return non-null values, the current node is the LCA
+5. Otherwise, return the non-null result from either subtree
+
+### Time and Space Complexity
+
+- **Time Complexity**: O(n) where n is the number of nodes in the tree
+- **Space Complexity**: O(h) where h is the height of the tree (for the recursion stack)
+
+### Usage Example
+
+The implementation is available in `app2.py`:
+
+```python
+from app2 import BinaryTree
+
+# Create a binary tree
+tree = BinaryTree()
+
+# Build a tree from a list of values
+tree.build_tree([3, 5, 1, 6, 2, 0, 8, None, None, 7, 4])
+
+# Find the LCA of nodes with values 5 and 1
+lca = tree.find_lca(5, 1)  # Returns 3
+```
+
 ## Getting Started
 
 To use the contact manager:
